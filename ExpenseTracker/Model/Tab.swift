@@ -13,6 +13,7 @@ enum Tab: String {
     case charts = "Charts"
     case settings = "Settings"
     
+    
     @ViewBuilder
     var tabContent: some View {
         switch self {
