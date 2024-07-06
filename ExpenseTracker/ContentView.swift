@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
     @AppStorage("isFirstLaunch") private var isFirstLaunch = true
     //Active tab
     @State private var activeTab: Tab = .recents
