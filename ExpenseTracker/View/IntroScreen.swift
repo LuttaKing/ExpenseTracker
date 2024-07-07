@@ -24,6 +24,7 @@ struct IntroScreen: View {
                 
                 PointView(symbol: "chart.bar", title: "Visual Charts", subTitle:"Cool charts of your earnings and expenses")
                 PointView(symbol: "magnifyingglass", title: "Cool Filters", subTitle:"Keep track of your earnings and expenses")
+              
             })
             .frame(maxWidth: .infinity,alignment: .leading)
             .padding(.horizontal,25)
@@ -70,6 +71,8 @@ struct IntroScreen: View {
         })
         
     }
+    
+    
 }
 
 #Preview {

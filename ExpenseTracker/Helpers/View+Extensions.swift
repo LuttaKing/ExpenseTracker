@@ -1,18 +1,36 @@
-//
-//  View+Extensions.swift
-//  ExpenseTracker
-//
-//  Created by Denilson Washuma on 07/07/2024.
-//
+
 
 import SwiftUI
 
-struct View_Extensions: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+// custom extensions
 
-#Preview {
-    View_Extensions()
+extension View {
+    
+    @ViewBuilder
+    func hSpacing(_ alignment:Alignment) -> some View{
+        self
+            .frame(maxWidth: .infinity, alignment: alignment)
+    }
+    
+    @ViewBuilder
+    func vSpacing(_ alignment:Alignment) -> some View{
+        self
+            .frame(maxHeight: .infinity, alignment: alignment)
+    }
+    
+    var safeArea: UIEdgeInsets {
+        if let windowScene = (UIApplication.shared.connectedScenes.first as? UIWindowScene){
+            return windowScene.keyWindow?.safeAreaInsets ?? .zero
+        }
+        return .zero
+    }
+    
+    func formatt(date:Date, format:String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from:date)
+    }
+    
+   
+    
 }

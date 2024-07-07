@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-struct TintColor: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct TintColor:Identifiable{
+    let id:UUID = UUID() //or .init
+    var color:String
+    var value:Color
+    
+    
 }
 
-#Preview {
-    TintColor()
-}
+var tints: [TintColor] = [
+    .init(color: "Red", value: .red),
+    .init(color: "Blue", value: .blue),
+    .init(color: "Purple", value: .purple),
+    TintColor(color: "Orange", value: .orange),
+    TintColor(color: "Brown", value: .brown)
+    
+]
