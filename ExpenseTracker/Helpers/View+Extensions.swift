@@ -31,6 +31,21 @@ extension View {
         return formatter.string(from:date)
     }
     
+    func currencyString(_ value:Double, allowedDigits:Int = 2) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "USD" // Set currency code to USD
+        formatter.currencySymbol = "$" 
+        formatter.maximumFractionDigits = allowedDigits
+        return formatter.string(from: .init(value: value)) ?? ""
+    }
+    
+//    func total(_ transactions:[Transaction], category: Category) -> Double {
+//        return transactions.filter({ $0.category == category.rawValue  }).reduce(Double.zero){ partialResult, transaction in
+//            return partialResult + transaction.amount
+//        }
+//    }
+    
    
     
 }

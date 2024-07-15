@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct Transaction: Identifiable {
-    let id: UUID = .init()
+@Model
+class Transaction {
     
     var title:String
     var remark:String
@@ -31,7 +32,6 @@ struct Transaction: Identifiable {
     }
     
     
-    
-    
 }
+
 
